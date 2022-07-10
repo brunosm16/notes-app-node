@@ -6,7 +6,7 @@ import { default as bodyParser } from "body-parser";
 import * as path from "path";
 import * as http from "http";
 import { NotesInMemory } from "./models/notes-in-memory/notes-in-memory.mjs";
-import { indexRouter } from "./routes/indexRouter.mjs";
+import { indexRouter } from "./routes/index.mjs";
 import { normalizePort } from "./helpers/app-http-handlers/others/normalize-port.mjs";
 import {
   onError,
