@@ -1,16 +1,5 @@
-import { default as express } from "express";
-import { NotesStore as notes } from "../app.mjs";
+import { homeRouter as home } from "./home.mjs";
+import { notesRouter as notes } from "./notes.mjs";
 
-export const indexRouter = express.Router();
-
-indexRouter.get("/", async (req, res, next) => {
-  try {
-    const ids = await notes.getIds();
-    const notesPromises = await ids.map((id) => notes.readById(id));
-    const notesList = Promise.all(notesPromises);
-
-    res.render("index", { title: "Notes app", notesList: notesList });
-  } catch (error) {
-    next(error);
-  }
-});
+export const homeRouter = home;
+export const notesRouter = notes;
