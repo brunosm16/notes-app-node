@@ -6,7 +6,7 @@ import { default as bodyParser } from "body-parser";
 import * as path from "path";
 import * as http from "http";
 import { NotesInMemory } from "./models/notes-in-memory/notes-in-memory.mjs";
-import { indexRouter } from "./routes/index.mjs";
+import { homeRouter, notesRouter } from "./routes/index.mjs";
 import { normalizePort } from "./helpers/app-http-handlers/others/normalize-port.mjs";
 import {
   onError,
@@ -33,7 +33,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use("/", indexRouter);
+app.use("/", homeRouter);
+app.use("/notes", notesRouter);
 app.use(handler404Error);
 app.use(handlerBasicError);
 
