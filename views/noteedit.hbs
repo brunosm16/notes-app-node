@@ -1,16 +1,16 @@
 <form method='POST' action='/notes/save'> 
-<input type='hidden' name='isCreate' value='<%= isCreate ? "create" : "update"%>'> 
-<p>Note Id: 
-{{#if isCreate }}
-    <input type='text' name='id' value=''/> 
-{{else}} 
-    {{#if note }}{{id}}{{/if}} 
-    <input name='id' value='{{#if note }}{{id}}{{/if}}'/> 
-{{/if}} 
-</p> 
-<p>Title: <input type='text' name='header' value='{{#if note }}{{note.header}}{{/if}}' /></p> 
-<br/>
-<textarea rows=5 cols=40 name='content' >{{#if note }}{{note.content}}{{/if}}</textarea> 
-<br/>
-<input type='submit' value='Submit' /> 
+    <input type='hidden' name='isCreate' value='<%= isCreate ? "create" : "update"%>'> 
+    <p>Note Id:     
+        {{#if isCreate }}
+            <input type='text' name='id' value=''/> 
+        {{else}} 
+        {{#if note }}{{id}}{{/if}} 
+            <input name='id' value='{{#if note }}{{id}}{{/if}}'/> 
+        {{/if}} 
+    </p> 
+    <p>Title: <input type='text' name='header' value='{{#if note }}{{note.header}}{{/if}}' /></p> 
+    <br/>
+    <textarea rows=5 cols=40 name='content' >{{#if note }}{{note.content}}{{/if}}</textarea> 
+    <br/>
+    <input type='submit' value='Submit' /> 
 </form>

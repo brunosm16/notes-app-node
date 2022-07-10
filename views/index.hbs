@@ -1,7 +1,8 @@
 <ul>
   {{#each notesList}}
-    <li>{{ id }}:
-      <a>{{ content }}</a>
+    <li>
+      {{id}}:
+      <a href="/notes/view?id={{id}}">{{content}}</a>
     </li>
   {{/each}}
 </ul>
