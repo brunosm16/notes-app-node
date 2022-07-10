@@ -23,7 +23,7 @@ export class NotesInMemory extends NotesStore {
   }
 
   async getIds() {
-    return Object.keys(notes).map(id => id);
+    return Object.keys(notes);
   }
 
   async count() {
