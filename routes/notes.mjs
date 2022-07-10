@@ -8,7 +8,7 @@ notesRouter.get("/add", (req, res, next) => {
     title: "Add Note",
     id: "",
     note: undefined,
-    isCreate: false,
+    isCreate: true,
   });
 });
 
@@ -18,9 +18,27 @@ notesRouter.get("/view", async (req, res, next) => {
     const note = await NotesStore.readById(id);
 
     res.render("noteview", {
-      title: note ? note.title : "",
+      title: note ? note.header : "",
       id,
       note,
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
+notesRouter.get("/edit", async (req, res, next) => {
+  try {
+    const { id } = req.query;
+    console.log(id);
+    const note = await NotesStore.readById(id);
+    const title = note ? `Edit ${note.header}` : "Add Note";
+
+    res.render("noteedit", {
+      title,
+      id,
+      note: note,
+      isCreate: false,
     });
   } catch (err) {
     next(err);
