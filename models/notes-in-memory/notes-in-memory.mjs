@@ -17,7 +17,7 @@ export class NotesInMemory extends NotesStore {
     else throw new Error(`Note '${id}' doesn't exist`);
   }
 
-  async destroyById(id) {
+  async deleteById(id) {
     if (notes[id]) delete notes[id];
     else throw new Error(`Note '${id}' doesn't exist`);
   }
