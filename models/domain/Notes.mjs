@@ -14,11 +14,11 @@ export class Note {
   }
 
   get header() {
-    this[_header];
+    return this[_header];
   }
 
   get content() {
-    this[_content];
+    return this[_content];
   }
 
   set header(header) {
@@ -29,4 +29,3 @@ export class Note {
     this[_content] = content;
   }
 }
-
