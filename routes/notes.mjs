@@ -12,6 +12,21 @@ notesRouter.get("/add", (req, res, next) => {
   });
 });
 
+notesRouter.get("/view", async (req, res, next) => {
+  try {
+    const { id } = req.query;
+    const note = await NotesStore.readById(id);
+
+    res.render("noteview", {
+      title: note ? note.title : "",
+      id,
+      note,
+    });
+  } catch (err) {
+    next(err);
+  }
+});
+
 notesRouter.post("/save", async (req, res, next) => {
   try {
     const { id, header, content, isCreate } = req.body;
