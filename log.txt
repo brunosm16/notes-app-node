@@ -1,0 +1,14 @@
+::1 - - [11/Jul/2022:13:24:25 +0000] "GET / HTTP/1.1" 304 -
+::1 - - [11/Jul/2022:13:24:25 +0000] "GET /assets/stylesheets/style.css HTTP/1.1" 304 -
+::1 - - [11/Jul/2022:13:24:25 +0000] "GET /assets/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+::1 - - [11/Jul/2022:13:24:25 +0000] "GET /assets/vendor/jquery/jquery.min.js HTTP/1.1" 304 -
+::1 - - [11/Jul/2022:13:24:25 +0000] "GET /assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+::1 - - [11/Jul/2022:13:24:25 +0000] "GET /assets/vendor/feather-icons/feather.js HTTP/1.1" 304 -
+::1 - - [11/Jul/2022:13:24:25 +0000] "GET /assets/vendor/popper.js/popper.min.js HTTP/1.1" 404 2836
+::1 - - [11/Jul/2022:13:24:26 +0000] "GET / HTTP/1.1" 304 -
+::1 - - [11/Jul/2022:13:24:26 +0000] "GET /assets/stylesheets/style.css HTTP/1.1" 304 -
+::1 - - [11/Jul/2022:13:24:26 +0000] "GET /assets/vendor/bootstrap/css/bootstrap.min.css HTTP/1.1" 304 -
+::1 - - [11/Jul/2022:13:24:26 +0000] "GET /assets/vendor/jquery/jquery.min.js HTTP/1.1" 304 -
+::1 - - [11/Jul/2022:13:24:26 +0000] "GET /assets/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 -
+::1 - - [11/Jul/2022:13:24:26 +0000] "GET /assets/vendor/feather-icons/feather.js HTTP/1.1" 304 -
+::1 - - [11/Jul/2022:13:24:26 +0000] "GET /assets/vendor/popper.js/popper.min.js HTTP/1.1" 404 2836

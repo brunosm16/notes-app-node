@@ -3,6 +3,7 @@ import { default as hbs } from "hbs";
 import { default as logger } from "morgan";
 import { default as cookieParser } from "cookie-parser";
 import { default as bodyParser } from "body-parser";
+import { default as dotenv } from "dotenv";
 import * as path from "path";
 import * as http from "http";
 import { NotesInMemory } from "./models/notes-in-memory/notes-in-memory.mjs";
@@ -18,17 +19,21 @@ import {
   handlerBasicError,
 } from "./helpers/app-http-handlers/error-handlers/index.mjs";
 import { default as __dirname } from "./directory-name.mjs";
+import { morganStream } from "./helpers/app-http-handlers/others/morgan-stream.mjs";
 
 export const NotesStore = new NotesInMemory();
 export const app = express();
 export const port = normalizePort(process.env.PORT || "3000");
+
+dotenv.config();
+const logFormat = process.env.LOG_FORMAT || "dev";
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "hbs");
 app.set("port", port);
 hbs.registerPartials(path.join(__dirname, "partials"));
 
-app.use(logger("dev"));
+app.use(logger(logFormat, { stream: morganStream(process.env.LOG_FILE) }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env DEBUG=notes:* nodemon ./app.mjs",
+    "dev": "cross-env LOG_FORMAT=common DEBUG=notes:* nodemon ./app.mjs",
     "start": "cross-env DEBUG=notes:* node ./app.mjs"
   },
   "dependencies": {
@@ -11,13 +11,15 @@
     "cookie-parser": "~1.4.4",
     "cross-env": "^7.0.3",
     "debug": "~2.6.9",
+    "dotenv": "^16.0.1",
     "express": "~4.16.1",
     "feather-icons": "4.25.x",
     "hbs": "~4.0.4",
     "http-errors": "~1.6.3",
     "jquery": "3.5.x",
     "morgan": "~1.9.1",
-    "popper.js": "1.16.x"
+    "popper.js": "1.16.x",
+    "rotating-file-stream": "^3.0.4"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
