@@ -1,14 +1,5 @@
-.layout {
-  background: #f4f3ee;
-}
-
 .layout-wrapper {
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  align-items: center;
+  display: grid;
+  grid-gap: 12px;
   padding: 2rem;
-  margin: 5rem auto;
-  width: 320px;
-  height: 600px;
 }

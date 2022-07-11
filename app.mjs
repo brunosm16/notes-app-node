@@ -46,6 +46,10 @@ app.use(
   express.static(path.join(__dirname, "node_modules/popper.js"))
 );
 
+app.use(
+  "/assets/vendor/feather-icons",
+  express.static(path.join(__dirname, "node_modules/feather-icons/dist"))
+);
 app.use("/", homeRouter);
 app.use("/notes", notesRouter);
 app.use(handler404Error);

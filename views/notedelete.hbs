@@ -1,7 +1,14 @@
 <form method='POST' action='/notes/delete/confirm'>
+  <div class="container-fluid">
     <input type='hidden' name='id' value='{{#if note}}{{id}}{{/if}}'>
-    <p>Delete {{note.header}}?</p>
-    <br/>
-    <input type='submit' value='DELETE' /> 
-    <a href="/notes/view?id={{#if note}}{{id}}{{/if}}">Cancel</a>
+    <p class="form-text">Delete {{note.header}}?</p>
+    <div class="btn-group">
+      <button type="submit" value='Delete' class="btn btn-outline-dark">
+        Delete
+      </button>
+      <a class="btn btn-outline-dark" href="/notes/view?id={{#if note}}{{id}}{{/if}}" role="button">
+         Cancel
+      </a>
+    </div>
+  </div>
 </form>

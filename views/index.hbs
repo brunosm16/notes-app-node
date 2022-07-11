@@ -1,8 +1,14 @@
-<ul>
-  {{#each notesList}}
-    <li>
-      {{id}}:
-      <a href="/notes/view?id={{id}}">{{content}}</a>
-    </li>
-  {{/each}}
-</ul>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 btn-group-vertical" role="group">
+      {{#each notesList}}
+        <a
+          class="btn btn-lg btn-block btn-outline-dark"
+          href="/notes/view?id={{id}}"
+        >
+          {{header}}
+        </a>
+      {{/each}}
+    </div>
+  </div>
+</div>

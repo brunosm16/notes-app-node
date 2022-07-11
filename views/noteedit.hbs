@@ -1,16 +1,34 @@
-<form method='POST' action='/notes/save'> 
-    <input type='hidden' name='isCreate' value='<%= isCreate ? "create" : "update"%>'> 
-    <p>Note Id:     
-        {{#if isCreate }}
-            <input type='text' name='id' value=''/> 
-        {{else}} 
-        {{#if note }}{{id}}{{/if}} 
-            <input name='id' value='{{#if note }}{{id}}{{/if}}'/> 
+<form method='POST' action='/notes/save'>
+  <div class="container-fluid">
+    {{#if isCreate}}
+      <input type='hidden' name='isCreate' value="create">
+    {{else}}
+      <input type='hidden' name='isCreate' value="update">
+    {{/if}}
+    <div class="form-group row align-items-center">
+      <label for="id" class="col-1 col-form-label">ID</label>
+      {{#if isCreate }}
+        <div class="col">
+          <input type='text' class="form-control" placeholder="note id" name='id' value=''/> 
+        </div>
+      {{else}} 
+        {{#if note }}
+          <span class="input-group-text">{{id}}</span>
         {{/if}} 
-    </p> 
-    <p>Title: <input type='text' name='header' value='{{#if note }}{{note.header}}{{/if}}' /></p> 
-    <br/>
-    <textarea rows=5 cols=40 name='content' >{{#if note }}{{note.content}}{{/if}}</textarea> 
-    <br/>
-    <input type='submit' value='Submit' /> 
+        <input type='hidden' name='id' value='{{#if note }}{{id}}{{/if}}'/> 
+      {{/if}} 
+    </div> 
+
+    <div class="form-group row">
+      <label for="title" class="col-1 col-form-label">Header</label>
+      <div class="col">
+        <input type="text" class="form-control" id='header' name='header' placeholder="note header" value='{{#if note }}{{note.header}}{{/if}}'>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <textarea class="form-control" name='content' rows="5">{{#if note }}{{note.content}}{{/if}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-outline-dark">Submit</button>
+ </div>
 </form>
