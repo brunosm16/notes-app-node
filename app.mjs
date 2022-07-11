@@ -14,6 +14,8 @@ import {
   onError,
   onListening,
   onRequest,
+  onUncaughtException,
+  onUnhandledException,
 } from "./helpers/app-http-handlers/event-handlers/index.mjs";
 
 import {
@@ -67,3 +69,6 @@ server.listen(port);
 server.on("request", onRequest);
 server.on("error", onError);
 server.on("listening", onListening);
+
+process.on("uncaughtException", onUncaughtException);
+process.on("unhandledRejection", onUnhandledException);
