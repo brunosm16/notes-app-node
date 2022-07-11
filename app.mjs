@@ -4,6 +4,7 @@ import { default as logger } from "morgan";
 import { default as cookieParser } from "cookie-parser";
 import { default as bodyParser } from "body-parser";
 import { default as dotenv } from "dotenv";
+import { default as debug } from "debug";
 import * as path from "path";
 import * as http from "http";
 import { NotesInMemory } from "./models/notes-in-memory/notes-in-memory.mjs";
@@ -12,6 +13,7 @@ import { normalizePort } from "./helpers/app-http-handlers/others/normalize-port
 import {
   onError,
   onListening,
+  onRequest,
 } from "./helpers/app-http-handlers/event-handlers/index.mjs";
 
 import {
@@ -62,5 +64,6 @@ app.use(handlerBasicError);
 
 export const server = http.createServer(app);
 server.listen(port);
+server.on("request", onRequest);
 server.on("error", onError);
 server.on("listening", onListening);

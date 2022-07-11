@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "cross-env LOG_FORMAT=common DEBUG=notes:* nodemon ./app.mjs",
+    "dev": "cross-env DEBUG=notes:* nodemon ./app.mjs",
     "start": "cross-env DEBUG=notes:* node ./app.mjs"
   },
   "dependencies": {
